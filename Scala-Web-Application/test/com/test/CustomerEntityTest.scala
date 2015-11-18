@@ -15,7 +15,7 @@ class CustomerEntityTest extends TestBase{
     {
       // Create an object and run test
       val customerEntity : CustomerEntity = new CustomerEntity("Callum Cooper", null, null,
-      null, null, 0)
+      null, null, 0, false)
       customerEntity.customerName should be ("Callum Cooper")
     }
   }
@@ -28,7 +28,7 @@ class CustomerEntityTest extends TestBase{
     {
       // Create an object and run test
       val customerEntity : CustomerEntity = new CustomerEntity(null, "1 Achorage, Salford Quays, Manchester",
-      null, null, null, 0)
+      null, null, null, 0, false)
       customerEntity.customerAddress should be ("1 Achorage, Salford Quays, Manchester")
     }
   }
@@ -41,7 +41,7 @@ class CustomerEntityTest extends TestBase{
     {
       // Create an object and run test
       val customerEntity : CustomerEntity = new CustomerEntity(null, null, "VisaDebit", null,
-      null, 0)
+      null, 0, false)
       customerEntity.customerCardType should be ("VisaDebit")
     }
   }
@@ -54,7 +54,7 @@ class CustomerEntityTest extends TestBase{
     {
       // Create an object and run test
       val customerEntity : CustomerEntity = new CustomerEntity(null, null, null,
-        "3543784534490652", null, 0)
+        "3543784534490652", null, 0, false)
       customerEntity.customerCardNumber should be ("3543784534490652")
     }
   }
@@ -67,7 +67,7 @@ class CustomerEntityTest extends TestBase{
     {
       // Create an object and run test
       val customerEntity : CustomerEntity = new CustomerEntity(null, null, null,
-      null, "11/16", 0)
+      null, "11/16", 0, false)
       customerEntity.customerExpiryDate should be ("11/16")
     }
   }
@@ -80,8 +80,21 @@ class CustomerEntityTest extends TestBase{
     {
       // Create an object and run test
       val customerEntity : CustomerEntity = new CustomerEntity(null, null, null,
-      null, null, 567)
+      null, null, 567, false)
       customerEntity.customerSecurityCode should be (567)
+    }
+  }
+
+  /**
+    * Test Customer is Customer Registered
+    */
+  def customerEntityIsCustomerRegistered(): Unit ={
+    "By initialising the is Customer Registered it" should "set a is Customer Registered with a valid Boolean value" in
+    {
+      // Create an object and run test
+      val customerEntity : CustomerEntity = new CustomerEntity(null, null, null,
+      null, null, 0, true)
+      customerEntity.isCustomerRegistered should be (true)
     }
   }
 
@@ -92,4 +105,5 @@ class CustomerEntityTest extends TestBase{
   customerEntityCustomerCardNumberTest
   customerEntityCustomerExpiryDateTest
   customerEntityCustomerSecurityCodeTest
+  customerEntityIsCustomerRegistered
 }
