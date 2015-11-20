@@ -20,3 +20,4 @@ resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
 routesGenerator := InjectedRoutesGenerator
 
 libraryDependencies += "org.scalatest" % "scalatest_2.11" % "2.2.4" % "test"
+libraryDependencies += "mysql" % "mysql-connector-java" % "5.1.27"

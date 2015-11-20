@@ -7,4 +7,11 @@ import javafx.beans.property.ObjectProperty
   */
 class EmployeeEntity(val employeeID : Int, val employeeUsername : String,
                     val employeePassword : String) {
+
+  /**
+    * Find by Employee ID
+    */
+//  def findByEmployeeID() : Int {
+//
+//  }
 }
